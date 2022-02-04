@@ -1,0 +1,40 @@
+//  -------MOUNTAIN PEAK SEQUENCE ---------
+//   APPROACH - IF N=1 and 2 , then print 0
+//              elif n=3 , print 2;
+//              formula- [prev value*2+2]
+             
+//   EXAMPLE -  N=3 , { 1,2, 3}
+//              sets = 132 , 231 , 321, 213
+//  here peak value are just two - 132 , 231
+             
+
+#include <iostream>
+using namespace std;
+
+int main()
+{
+    long int n ,s=2, i;
+    cin>>n;
+    
+    if(n>2)
+    {
+        if(n==3)
+        {
+            cout<<s;
+        }
+         else
+         {
+            for(i=1; i<n-2; i++) 
+            {
+               s=(s*2+2)% 100000000007;
+            }
+             cout<<s; 
+      }
+    }
+    else
+    {
+        cout<<"0";
+    }
+
+    return 0;
+}
